@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "component.ts",
+        "componentGroup.ts",
+        "config/index.ts",
+        "config/vars.ts",
+        "index.ts",
+        "metric.ts",
+        "metricsProvider.ts",
+        "provider.ts",
+        "utilities.ts"
+    ]
+}
