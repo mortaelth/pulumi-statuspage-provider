@@ -1,0 +1,572 @@
+{
+    "name": "statuspage",
+    "displayName": "StatusPage.io",
+    "description": "A Pulumi package for creating and managing statuspage cloud resources.",
+    "keywords": [
+        "pulumi",
+        "statuspage",
+        "category/cloud"
+    ],
+    "homepage": "https://github.com/mortaelth/pulumi-statuspage-provider",
+    "license": "Apache-2.0",
+    "attribution": "This Pulumi package is based on the [`statuspage` Terraform Provider](https://github.com/yannh/terraform-provider-statuspage).",
+    "repository": "https://github.com/mortaelth/pulumi-statuspage-provider",
+    "publisher": "mortaelth",
+    "meta": {
+        "moduleFormat": "(.*)(?:/[^/]*)"
+    },
+    "language": {
+        "csharp": {
+            "packageReferences": {
+                "Pulumi": "3.*"
+            },
+            "compatibility": "tfbridge20"
+        },
+        "go": {
+            "importBasePath": "github.com/mortaelth/pulumi-statuspage-provider/sdk/go/statuspage",
+            "generateResourceContainerTypes": true,
+            "generateExtraInputTypes": true
+        },
+        "nodejs": {
+            "packageDescription": "A Pulumi package for creating and managing statuspage cloud resources.",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/yannh/terraform-provider-statuspage)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-statuspage` repo](https://github.com/mortaelth/pulumi-statuspage-provider/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-statuspage` repo](https://github.com/yannh/terraform-provider-statuspage/issues).",
+            "dependencies": {
+                "@pulumi/pulumi": "^3.0.0"
+            },
+            "devDependencies": {
+                "@types/mime": "^2.0.0",
+                "@types/node": "^10.0.0"
+            },
+            "compatibility": "tfbridge20",
+            "disableUnionOutputTypes": true
+        },
+        "python": {
+            "requires": {
+                "pulumi": "\u003e=3.0.0,\u003c4.0.0"
+            },
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/yannh/terraform-provider-statuspage)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-statuspage` repo](https://github.com/mortaelth/pulumi-statuspage-provider/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-statuspage` repo](https://github.com/yannh/terraform-provider-statuspage/issues).",
+            "compatibility": "tfbridge20",
+            "pyproject": {}
+        }
+    },
+    "config": {
+        "variables": {
+            "token": {
+                "type": "string",
+                "defaultInfo": {
+                    "environment": [
+                        "STATUSPAGE_TOKEN"
+                    ]
+                },
+                "secret": true
+            }
+        },
+        "defaults": [
+            "token"
+        ]
+    },
+    "provider": {
+        "description": "The provider type for the statuspage package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
+        "properties": {
+            "token": {
+                "type": "string",
+                "secret": true
+            }
+        },
+        "inputProperties": {
+            "token": {
+                "type": "string",
+                "defaultInfo": {
+                    "environment": [
+                        "STATUSPAGE_TOKEN"
+                    ]
+                },
+                "secret": true
+            }
+        }
+    },
+    "resources": {
+        "statuspage:index/component:Component": {
+            "description": "\n\n\n## Import\n\n`statuspage_component` can be imported using the ID of the component, e.g.\n\n```sh\n $ pulumi import statuspage:index/component:Component my_component my-page-id/my-component-id\n```\n\n ",
+            "properties": {
+                "automationEmail": {
+                    "type": "string",
+                    "description": "Email address to send automation events to\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the component\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the component\n"
+                },
+                "onlyShowIfDegraded": {
+                    "type": "boolean",
+                    "description": "Should this component be shown component only if in degraded state\n"
+                },
+                "pageId": {
+                    "type": "string",
+                    "description": "the id of the page this component belongs to\n"
+                },
+                "showcase": {
+                    "type": "boolean",
+                    "description": "Should this component be showcased\n\nThe following attributes are exported:\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "status of the component - must be one of `operational`, `under_maintenance`, `degraded_performance`, `partial_outage`, `major_outage` or ` `\n"
+                }
+            },
+            "required": [
+                "automationEmail",
+                "name",
+                "pageId"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the component\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the component\n"
+                },
+                "onlyShowIfDegraded": {
+                    "type": "boolean",
+                    "description": "Should this component be shown component only if in degraded state\n"
+                },
+                "pageId": {
+                    "type": "string",
+                    "description": "the id of the page this component belongs to\n",
+                    "willReplaceOnChanges": true
+                },
+                "showcase": {
+                    "type": "boolean",
+                    "description": "Should this component be showcased\n\nThe following attributes are exported:\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "status of the component - must be one of `operational`, `under_maintenance`, `degraded_performance`, `partial_outage`, `major_outage` or ` `\n"
+                }
+            },
+            "requiredInputs": [
+                "pageId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Component resources.\n",
+                "properties": {
+                    "automationEmail": {
+                        "type": "string",
+                        "description": "Email address to send automation events to\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the component\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the component\n"
+                    },
+                    "onlyShowIfDegraded": {
+                        "type": "boolean",
+                        "description": "Should this component be shown component only if in degraded state\n"
+                    },
+                    "pageId": {
+                        "type": "string",
+                        "description": "the id of the page this component belongs to\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "showcase": {
+                        "type": "boolean",
+                        "description": "Should this component be showcased\n\nThe following attributes are exported:\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "status of the component - must be one of `operational`, `under_maintenance`, `degraded_performance`, `partial_outage`, `major_outage` or ` `\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "statuspage:index/componentGroup:ComponentGroup": {
+            "description": "{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as statuspage from \"@pulumi/statuspage\";\n\nconst myGroup = new statuspage.ComponentGroup(\"myGroup\", {\n    components: [statuspage_component.my_component.id],\n    description: \"Created by terraform\",\n    pageId: \"pageid\",\n});\n```\n```python\nimport pulumi\nimport pulumi_statuspage as statuspage\n\nmy_group = statuspage.ComponentGroup(\"myGroup\",\n    components=[statuspage_component[\"my_component\"][\"id\"]],\n    description=\"Created by terraform\",\n    page_id=\"pageid\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Statuspage = Pulumi.Statuspage;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var myGroup = new Statuspage.ComponentGroup(\"myGroup\", new()\n    {\n        Components = new[]\n        {\n            statuspage_component.My_component.Id,\n        },\n        Description = \"Created by terraform\",\n        PageId = \"pageid\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/mortaelth/pulumi-statuspage-provider/sdk/go/statuspage\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := statuspage.NewComponentGroup(ctx, \"myGroup\", \u0026statuspage.ComponentGroupArgs{\n\t\t\tComponents: pulumi.StringArray{\n\t\t\t\tstatuspage_component.My_component.Id,\n\t\t\t},\n\t\t\tDescription: pulumi.String(\"Created by terraform\"),\n\t\t\tPageId:      pulumi.String(\"pageid\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.statuspage.ComponentGroup;\nimport com.pulumi.statuspage.ComponentGroupArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var myGroup = new ComponentGroup(\"myGroup\", ComponentGroupArgs.builder()        \n            .components(statuspage_component.my_component().id())\n            .description(\"Created by terraform\")\n            .pageId(\"pageid\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  myGroup:\n    type: statuspage:ComponentGroup\n    properties:\n      components:\n        - ${statuspage_component.my_component.id}\n      description: Created by terraform\n      pageId: pageid\n```\n{{% /example %}}\n{{% /examples %}}\n\n## Import\n\n`statuspage_component_group` can be imported using the ID of the component group, e.g.\n\n```sh\n $ pulumi import statuspage:index/componentGroup:ComponentGroup my_group my-page-id/my-component-group-id\n```\n\n ",
+            "properties": {
+                "components": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of component IDs\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "description of the component group\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "name of the component group\n"
+                },
+                "pageId": {
+                    "type": "string",
+                    "description": "the id of the page this component belongs to\n"
+                }
+            },
+            "required": [
+                "components",
+                "name",
+                "pageId"
+            ],
+            "inputProperties": {
+                "components": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of component IDs\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "description of the component group\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "name of the component group\n"
+                },
+                "pageId": {
+                    "type": "string",
+                    "description": "the id of the page this component belongs to\n",
+                    "willReplaceOnChanges": true
+                }
+            },
+            "requiredInputs": [
+                "components",
+                "pageId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ComponentGroup resources.\n",
+                "properties": {
+                    "components": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of component IDs\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "description of the component group\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "name of the component group\n"
+                    },
+                    "pageId": {
+                        "type": "string",
+                        "description": "the id of the page this component belongs to\n",
+                        "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "statuspage:index/metric:Metric": {
+            "properties": {
+                "decimalPlaces": {
+                    "type": "integer",
+                    "description": "How many decimal places to render on the graph\n"
+                },
+                "display": {
+                    "type": "boolean",
+                    "description": "Should the metric be displayed\n"
+                },
+                "metricIdentifier": {
+                    "type": "string",
+                    "description": "The identifier used to look up the metric data from the provider\n"
+                },
+                "metricsProviderId": {
+                    "type": "string",
+                    "description": "ID of the metric provider\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Display name for the metric\n"
+                },
+                "pageId": {
+                    "type": "string",
+                    "description": "The ID of the page this metric belongs to\n"
+                },
+                "suffix": {
+                    "type": "string",
+                    "description": "Suffix to describe the units on the graph\n"
+                },
+                "tooltipDescription": {
+                    "type": "string",
+                    "description": "Tooltip for the metric\n"
+                },
+                "transform": {
+                    "type": "string",
+                    "description": "The transform to apply to metric before pulling into Statuspage. One of: 'average', 'count', 'max', 'min', 'sum',\n'response_time' or 'uptime'\n"
+                },
+                "yAxisHidden": {
+                    "type": "boolean",
+                    "description": "Should the values on the y axis be hidden on render\n"
+                },
+                "yAxisMax": {
+                    "type": "number",
+                    "description": "The upper bound of the y axis\n"
+                },
+                "yAxisMin": {
+                    "type": "number",
+                    "description": "The lower bound of the y axis\n"
+                }
+            },
+            "required": [
+                "metricsProviderId",
+                "name",
+                "pageId"
+            ],
+            "inputProperties": {
+                "decimalPlaces": {
+                    "type": "integer",
+                    "description": "How many decimal places to render on the graph\n"
+                },
+                "display": {
+                    "type": "boolean",
+                    "description": "Should the metric be displayed\n"
+                },
+                "metricIdentifier": {
+                    "type": "string",
+                    "description": "The identifier used to look up the metric data from the provider\n"
+                },
+                "metricsProviderId": {
+                    "type": "string",
+                    "description": "ID of the metric provider\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Display name for the metric\n"
+                },
+                "pageId": {
+                    "type": "string",
+                    "description": "The ID of the page this metric belongs to\n",
+                    "willReplaceOnChanges": true
+                },
+                "suffix": {
+                    "type": "string",
+                    "description": "Suffix to describe the units on the graph\n"
+                },
+                "tooltipDescription": {
+                    "type": "string",
+                    "description": "Tooltip for the metric\n"
+                },
+                "transform": {
+                    "type": "string",
+                    "description": "The transform to apply to metric before pulling into Statuspage. One of: 'average', 'count', 'max', 'min', 'sum',\n'response_time' or 'uptime'\n"
+                },
+                "yAxisHidden": {
+                    "type": "boolean",
+                    "description": "Should the values on the y axis be hidden on render\n"
+                },
+                "yAxisMax": {
+                    "type": "number",
+                    "description": "The upper bound of the y axis\n"
+                },
+                "yAxisMin": {
+                    "type": "number",
+                    "description": "The lower bound of the y axis\n"
+                }
+            },
+            "requiredInputs": [
+                "metricsProviderId",
+                "pageId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Metric resources.\n",
+                "properties": {
+                    "decimalPlaces": {
+                        "type": "integer",
+                        "description": "How many decimal places to render on the graph\n"
+                    },
+                    "display": {
+                        "type": "boolean",
+                        "description": "Should the metric be displayed\n"
+                    },
+                    "metricIdentifier": {
+                        "type": "string",
+                        "description": "The identifier used to look up the metric data from the provider\n"
+                    },
+                    "metricsProviderId": {
+                        "type": "string",
+                        "description": "ID of the metric provider\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Display name for the metric\n"
+                    },
+                    "pageId": {
+                        "type": "string",
+                        "description": "The ID of the page this metric belongs to\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "suffix": {
+                        "type": "string",
+                        "description": "Suffix to describe the units on the graph\n"
+                    },
+                    "tooltipDescription": {
+                        "type": "string",
+                        "description": "Tooltip for the metric\n"
+                    },
+                    "transform": {
+                        "type": "string",
+                        "description": "The transform to apply to metric before pulling into Statuspage. One of: 'average', 'count', 'max', 'min', 'sum',\n'response_time' or 'uptime'\n"
+                    },
+                    "yAxisHidden": {
+                        "type": "boolean",
+                        "description": "Should the values on the y axis be hidden on render\n"
+                    },
+                    "yAxisMax": {
+                        "type": "number",
+                        "description": "The upper bound of the y axis\n"
+                    },
+                    "yAxisMin": {
+                        "type": "number",
+                        "description": "The lower bound of the y axis\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "statuspage:index/metricsProvider:MetricsProvider": {
+            "description": "{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as statuspage from \"@pulumi/statuspage\";\n\nconst statuspagePingdom = new statuspage.MetricsProvider(\"statuspagePingdom\", {\n    apiToken: \"a-pingdom-api-token\",\n    pageId: \"pageid\",\n    type: \"Pingdom\",\n});\n```\n```python\nimport pulumi\nimport pulumi_statuspage as statuspage\n\nstatuspage_pingdom = statuspage.MetricsProvider(\"statuspagePingdom\",\n    api_token=\"a-pingdom-api-token\",\n    page_id=\"pageid\",\n    type=\"Pingdom\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Statuspage = Pulumi.Statuspage;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var statuspagePingdom = new Statuspage.MetricsProvider(\"statuspagePingdom\", new()\n    {\n        ApiToken = \"a-pingdom-api-token\",\n        PageId = \"pageid\",\n        Type = \"Pingdom\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/mortaelth/pulumi-statuspage-provider/sdk/go/statuspage\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := statuspage.NewMetricsProvider(ctx, \"statuspagePingdom\", \u0026statuspage.MetricsProviderArgs{\n\t\t\tApiToken: pulumi.String(\"a-pingdom-api-token\"),\n\t\t\tPageId:   pulumi.String(\"pageid\"),\n\t\t\tType:     pulumi.String(\"Pingdom\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.statuspage.MetricsProvider;\nimport com.pulumi.statuspage.MetricsProviderArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var statuspagePingdom = new MetricsProvider(\"statuspagePingdom\", MetricsProviderArgs.builder()        \n            .apiToken(\"a-pingdom-api-token\")\n            .pageId(\"pageid\")\n            .type(\"Pingdom\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  statuspagePingdom:\n    type: statuspage:MetricsProvider\n    properties:\n      apiToken: a-pingdom-api-token\n      pageId: pageid\n      type: Pingdom\n```\n{{% /example %}}\n{{% /examples %}}\n\n## Import\n\n`statuspage_metrics_provider` can be imported using the ID of the metrics provider, e.g.\n\n```sh\n $ pulumi import statuspage:index/metricsProvider:MetricsProvider statuspage_pingdom my-page-id/my-metrics-provider-id\n```\n\n ",
+            "properties": {
+                "apiKey": {
+                    "type": "string",
+                    "description": "Required by the Datadog and NewRelic type metrics providers.\n",
+                    "secret": true
+                },
+                "apiToken": {
+                    "type": "string",
+                    "description": "Required by the Librato and Pingdom-type metrics provider.\n",
+                    "secret": true
+                },
+                "applicationKey": {
+                    "type": "string",
+                    "description": "Required by the Pingdom and Datadog type metrics providers.\n",
+                    "secret": true
+                },
+                "email": {
+                    "type": "string",
+                    "description": "Required by the Librato and Pingdom type metrics providers.\n"
+                },
+                "metricBaseUri": {
+                    "type": "string",
+                    "description": "Required by the NewRelic-type metrics provider\n"
+                },
+                "pageId": {
+                    "type": "string",
+                    "description": "the id of the page this component belongs to\n"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "Required by the Pingdom-type metrics provider.\n",
+                    "secret": true
+                },
+                "type": {
+                    "type": "string",
+                    "description": "One of `Pingdom`, `NewRelic`, `Librato`, `Datadog`, or `Self`\n"
+                }
+            },
+            "required": [
+                "pageId",
+                "type"
+            ],
+            "inputProperties": {
+                "apiKey": {
+                    "type": "string",
+                    "description": "Required by the Datadog and NewRelic type metrics providers.\n",
+                    "secret": true
+                },
+                "apiToken": {
+                    "type": "string",
+                    "description": "Required by the Librato and Pingdom-type metrics provider.\n",
+                    "secret": true
+                },
+                "applicationKey": {
+                    "type": "string",
+                    "description": "Required by the Pingdom and Datadog type metrics providers.\n",
+                    "secret": true
+                },
+                "email": {
+                    "type": "string",
+                    "description": "Required by the Librato and Pingdom type metrics providers.\n"
+                },
+                "metricBaseUri": {
+                    "type": "string",
+                    "description": "Required by the NewRelic-type metrics provider\n"
+                },
+                "pageId": {
+                    "type": "string",
+                    "description": "the id of the page this component belongs to\n",
+                    "willReplaceOnChanges": true
+                },
+                "password": {
+                    "type": "string",
+                    "description": "Required by the Pingdom-type metrics provider.\n",
+                    "secret": true
+                },
+                "type": {
+                    "type": "string",
+                    "description": "One of `Pingdom`, `NewRelic`, `Librato`, `Datadog`, or `Self`\n"
+                }
+            },
+            "requiredInputs": [
+                "pageId",
+                "type"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering MetricsProvider resources.\n",
+                "properties": {
+                    "apiKey": {
+                        "type": "string",
+                        "description": "Required by the Datadog and NewRelic type metrics providers.\n",
+                        "secret": true
+                    },
+                    "apiToken": {
+                        "type": "string",
+                        "description": "Required by the Librato and Pingdom-type metrics provider.\n",
+                        "secret": true
+                    },
+                    "applicationKey": {
+                        "type": "string",
+                        "description": "Required by the Pingdom and Datadog type metrics providers.\n",
+                        "secret": true
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Required by the Librato and Pingdom type metrics providers.\n"
+                    },
+                    "metricBaseUri": {
+                        "type": "string",
+                        "description": "Required by the NewRelic-type metrics provider\n"
+                    },
+                    "pageId": {
+                        "type": "string",
+                        "description": "the id of the page this component belongs to\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "Required by the Pingdom-type metrics provider.\n",
+                        "secret": true
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "One of `Pingdom`, `NewRelic`, `Librato`, `Datadog`, or `Self`\n"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
