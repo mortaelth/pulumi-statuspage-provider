@@ -3,6 +3,10 @@ on:
   push:
     tags:
       - v*.*.*
+
+permissions:
+  contents: write
+
 env:
   # THIS GITHUB_TOKEN IS A REQUIREMENT TO BE ABLE TO WRITE TO GH RELEASES
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -65,15 +69,15 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-          - 3.1.301
+          - 8.0.x
         goversion:
-          - 1.17.x
+          - 1.21.x
         language:
           - nodejs
           - python
           - dotnet
           - go
         nodeversion:
-          - 14.x
+          - 16.x
         pythonversion:
           - "3.9"
