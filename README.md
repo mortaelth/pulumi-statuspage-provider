@@ -1,4 +1,4 @@
-# Foo Resource Provider
+# Statuspage Resource Provider
 
 The Statuspage Resource Provider lets you manage [Statuspage](http://statuspage.io) resources.
 
