@@ -112,6 +112,7 @@ namespace Pulumi.Statuspage
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                PluginDownloadURL = "https://github.com/mortaelth/pulumi-statuspage-provider/releases/",
                 AdditionalSecretOutputs =
                 {
                     "apiKey",

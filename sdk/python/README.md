@@ -33,7 +33,7 @@ pip install pulumi_statuspage
 To use from Go, use `go get` to grab the latest version of the library:
 
 ```bash
-go get github.com/pulumi/pulumi-statuspage/sdk/go/...
+go get github.com/mortaelth/pulumi-statuspage-provider/sdk/go/...
 ```
 
 ### .NET
@@ -41,7 +41,7 @@ go get github.com/pulumi/pulumi-statuspage/sdk/go/...
 To use from .NET, install using `dotnet add package`:
 
 ```bash
-dotnet add package Pulumi.statuspage
+dotnet add package statuspage
 ```
 
 ## Configuration
