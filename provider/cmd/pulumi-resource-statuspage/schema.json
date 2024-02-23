@@ -11,7 +11,7 @@
     "license": "Apache-2.0",
     "attribution": "This Pulumi package is based on the [`statuspage` Terraform Provider](https://github.com/yannh/terraform-provider-statuspage).",
     "repository": "https://github.com/mortaelth/pulumi-statuspage-provider",
-    "pluginDownloadURL": "https://github.com/mortaelth/pulumi-statuspage-provider/releases/",
+    "pluginDownloadURL": "github://api.github.com/mortaelth/pulumi-statuspage-provider",
     "publisher": "mortaelth",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"

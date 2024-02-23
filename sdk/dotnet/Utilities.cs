@@ -53,7 +53,7 @@ namespace Pulumi.Statuspage
         {
             var dst = src ?? new global::Pulumi.InvokeOptions{};
             dst.Version = src?.Version ?? Version;
-            dst.PluginDownloadURL = src?.PluginDownloadURL ?? "https://github.com/mortaelth/pulumi-statuspage-provider/releases/";
+            dst.PluginDownloadURL = src?.PluginDownloadURL ?? "github://api.github.com/mortaelth/pulumi-statuspage-provider";
             return dst;
         }
 

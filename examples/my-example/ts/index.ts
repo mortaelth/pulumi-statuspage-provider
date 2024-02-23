@@ -1,15 +1,19 @@
 import * as statuspage from "pulumi-statuspage";
+import * as pulumi from "@pulumi/pulumi";
+
+const config = new pulumi.Config();
+const pageId = config.require("pageId");
 
 export const component = new statuspage.Component("my-component", {
-  pageId: "my-page",
-  name: "My Component",
+  name: "[ci-test]",
+  pageId,
 });
 
 export const componentGroup = new statuspage.ComponentGroup(
   "my-component-group",
   {
-    pageId: "my-page",
-    name: "My Component Group",
+    name: "[ci-test-group]",
+    pageId,
     components: [component.id],
   }
 );

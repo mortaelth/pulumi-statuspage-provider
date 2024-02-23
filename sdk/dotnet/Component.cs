@@ -88,7 +88,7 @@ namespace Pulumi.Statuspage
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "https://github.com/mortaelth/pulumi-statuspage-provider/releases/",
+                PluginDownloadURL = "github://api.github.com/mortaelth/pulumi-statuspage-provider",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
