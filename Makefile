@@ -2,6 +2,7 @@ PROJECT_NAME := statuspage Package
 
 SHELL            := /bin/bash
 PACK             := statuspage
+ORG              := mortaelth
 PROJECT          := github.com/mortaelth/pulumi-statuspage-provider
 NODE_MODULE_NAME := @mortaelth/${PACK}
 TF_NAME          := ${PACK}

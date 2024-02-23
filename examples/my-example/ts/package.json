@@ -6,6 +6,6 @@
   },
   "dependencies": {
     "@pulumi/pulumi": "^3.0.0",
-    "@pulumi/statuspage": "*"
+    "pulumi-statuspage": "*"
   }
 }

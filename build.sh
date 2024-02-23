@@ -8,4 +8,4 @@ rm -f ~/.pulumi/bin/pulumi-resource-statuspage
 cp ./bin/pulumi-resource-statuspage ~/.pulumi/bin/pulumi-resource-statuspagecd 
 make install_nodejs_sdk
 cd examples/my-example/ts
-yarn link "@pulumi/statuspage"
+yarn link "pulumi-statuspage"

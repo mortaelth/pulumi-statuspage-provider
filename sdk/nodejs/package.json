@@ -1,5 +1,5 @@
 {
-    "name": "@pulumi/statuspage",
+    "name": "pulumi-statuspage",
     "version": "${VERSION}",
     "description": "A Pulumi package for creating and managing statuspage cloud resources.",
     "keywords": [
@@ -23,6 +23,7 @@
     },
     "pulumi": {
         "resource": true,
-        "name": "statuspage"
+        "name": "statuspage",
+        "server": "https://github.com/mortaelth/pulumi-statuspage-provider/releases/"
     }
 }

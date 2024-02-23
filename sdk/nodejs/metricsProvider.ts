@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as statuspage from "@pulumi/statuspage";
+ * import * as statuspage from "pulumi-statuspage";
  *
  * const statuspagePingdom = new statuspage.MetricsProvider("statuspagePingdom", {
  *     apiToken: "a-pingdom-api-token",

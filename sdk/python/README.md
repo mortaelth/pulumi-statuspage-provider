@@ -11,13 +11,13 @@ This package is available for several languages/platforms:
 To use from JavaScript or TypeScript in Node.js, install using either `npm`:
 
 ```bash
-npm install @pulumi/statuspage
+npm install pulumi-statuspage
 ```
 
 or `yarn`:
 
 ```bash
-yarn add @pulumi/statuspage
+yarn add pulumi-statuspage
 ```
 
 ### Python

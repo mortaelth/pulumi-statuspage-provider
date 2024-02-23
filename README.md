@@ -11,13 +11,13 @@ This package is available for several languages/platforms:
 To use from JavaScript or TypeScript in Node.js, install using either `npm`:
 
 ```bash
-npm install @pulumi/statuspage
+npm install pulumi-statuspage
 ```
 
 or `yarn`:
 
 ```bash
-yarn add @pulumi/statuspage
+yarn add pulumi-statuspage
 ```
 
 ### Python
@@ -33,7 +33,7 @@ pip install pulumi_statuspage
 To use from Go, use `go get` to grab the latest version of the library:
 
 ```bash
-go get github.com/pulumi/pulumi-statuspage/sdk/go/...
+go get github.com/mortaelth/pulumi-statuspage-provider/sdk/go/...
 ```
 
 ### .NET
@@ -41,7 +41,7 @@ go get github.com/pulumi/pulumi-statuspage/sdk/go/...
 To use from .NET, install using `dotnet add package`:
 
 ```bash
-dotnet add package Pulumi.statuspage
+dotnet add package statuspage
 ```
 
 ## Configuration

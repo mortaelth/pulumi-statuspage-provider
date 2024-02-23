@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as statuspage from "@pulumi/statuspage";
+ * import * as statuspage from "pulumi-statuspage";
  *
  * const myGroup = new statuspage.ComponentGroup("myGroup", {
  *     components: [statuspage_component.my_component.id],

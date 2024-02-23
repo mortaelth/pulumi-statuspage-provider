@@ -1,4 +1,4 @@
-import * as statuspage from "@pulumi/statuspage";
+import * as statuspage from "pulumi-statuspage";
 
 export const component = new statuspage.Component("my-component", {
   pageId: "my-page",
