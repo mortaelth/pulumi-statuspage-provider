@@ -47,9 +47,7 @@ import (
 // `statuspage_component_group` can be imported using the ID of the component group, e.g.
 //
 // ```sh
-//
-//	$ pulumi import statuspage:index/componentGroup:ComponentGroup my_group my-page-id/my-component-group-id
-//
+// $ pulumi import statuspage:index/componentGroup:ComponentGroup my_group my-page-id/my-component-group-id
 // ```
 type ComponentGroup struct {
 	pulumi.CustomResourceState

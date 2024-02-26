@@ -313,7 +313,7 @@ class MetricsProvider(pulumi.CustomResource):
         `statuspage_metrics_provider` can be imported using the ID of the metrics provider, e.g.
 
         ```sh
-         $ pulumi import statuspage:index/metricsProvider:MetricsProvider statuspage_pingdom my-page-id/my-metrics-provider-id
+        $ pulumi import statuspage:index/metricsProvider:MetricsProvider statuspage_pingdom my-page-id/my-metrics-provider-id
         ```
 
         :param str resource_name: The name of the resource.
@@ -351,7 +351,7 @@ class MetricsProvider(pulumi.CustomResource):
         `statuspage_metrics_provider` can be imported using the ID of the metrics provider, e.g.
 
         ```sh
-         $ pulumi import statuspage:index/metricsProvider:MetricsProvider statuspage_pingdom my-page-id/my-metrics-provider-id
+        $ pulumi import statuspage:index/metricsProvider:MetricsProvider statuspage_pingdom my-page-id/my-metrics-provider-id
         ```
 
         :param str resource_name: The name of the resource.

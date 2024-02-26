@@ -35,7 +35,7 @@ namespace Pulumi.Statuspage
     /// `statuspage_metrics_provider` can be imported using the ID of the metrics provider, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import statuspage:index/metricsProvider:MetricsProvider statuspage_pingdom my-page-id/my-metrics-provider-id
+    /// $ pulumi import statuspage:index/metricsProvider:MetricsProvider statuspage_pingdom my-page-id/my-metrics-provider-id
     /// ```
     /// </summary>
     [StatuspageResourceType("statuspage:index/metricsProvider:MetricsProvider")]

@@ -260,7 +260,7 @@ class Component(pulumi.CustomResource):
         `statuspage_component` can be imported using the ID of the component, e.g.
 
         ```sh
-         $ pulumi import statuspage:index/component:Component my_component my-page-id/my-component-id
+        $ pulumi import statuspage:index/component:Component my_component my-page-id/my-component-id
         ```
 
         :param str resource_name: The name of the resource.
@@ -286,7 +286,7 @@ class Component(pulumi.CustomResource):
         `statuspage_component` can be imported using the ID of the component, e.g.
 
         ```sh
-         $ pulumi import statuspage:index/component:Component my_component my-page-id/my-component-id
+        $ pulumi import statuspage:index/component:Component my_component my-page-id/my-component-id
         ```
 
         :param str resource_name: The name of the resource.

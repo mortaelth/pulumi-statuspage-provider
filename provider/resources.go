@@ -15,13 +15,13 @@
 package statuspage
 
 import (
-	"path/filepath"
-	"github.com/yannh/terraform-provider-statuspage/statuspage"
+	"github.com/mortaelth/pulumi-statuspage-provider/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
-	"github.com/mortaelth/pulumi-statuspage-provider/provider/pkg/version"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
+	"github.com/yannh/terraform-provider-statuspage/statuspage"
+	"path/filepath"
 )
 
 // all of the token components used below.
@@ -84,7 +84,7 @@ func Provider() tfbridge.ProviderInfo {
 		// The GitHub Org for the provider - defaults to `terraform-providers`. Note that this
 		// should match the TF provider module's require directive, not any replace directives.
 		GitHubOrg: "yannh",
-		Config:    map[string]*tfbridge.SchemaInfo{
+		Config: map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
 			// no additional points are required.
 			// "region": {
@@ -101,7 +101,7 @@ func Provider() tfbridge.ProviderInfo {
 			},
 		},
 		PreConfigureCallback: preConfigureCallback,
-		Resources:            map[string]*tfbridge.ResourceInfo{
+		Resources: map[string]*tfbridge.ResourceInfo{
 			// Map each resource in the Terraform provider to a Pulumi type. Two examples
 			// are below - the single line form is the common case. The multi-line form is
 			// needed only if you wish to override types or other default options.
@@ -114,10 +114,10 @@ func Provider() tfbridge.ProviderInfo {
 			// 		"tags": {Type: tfbridge.MakeType(mainPkg, "Tags")},
 			// 	},
 			// },
-			"statuspage_component":			{Tok: tfbridge.MakeResource(mainPkg, mainMod, "Component")},
-			"statuspage_component_group":	{Tok: tfbridge.MakeResource(mainPkg, mainMod, "ComponentGroup")},
-			"statuspage_metric":			{Tok: tfbridge.MakeResource(mainPkg, mainMod, "Metric")},
-			"statuspage_metrics_provider":	{Tok: tfbridge.MakeResource(mainPkg, mainMod, "MetricsProvider")},
+			"statuspage_component":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Component")},
+			"statuspage_component_group":  {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ComponentGroup")},
+			"statuspage_metric":           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Metric")},
+			"statuspage_metrics_provider": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "MetricsProvider")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			// Map each resource in the Terraform provider to a Pulumi function. An example
