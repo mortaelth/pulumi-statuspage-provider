@@ -116,7 +116,7 @@ func Provider() tfbridge.ProviderInfo {
 			// },
 			"statuspage_component":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Component")},
 			"statuspage_component_group":  {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ComponentGroup")},
-			"statuspage_metric":           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Metric")},
+			"statuspage_metric":           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Metric"), Docs: &tfbridge.DocInfo{AllowMissing: true}},
 			"statuspage_metrics_provider": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "MetricsProvider")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
